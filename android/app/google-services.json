@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1015567449822",
+    "project_id": "fire-emulator-demo",
+    "storage_bucket": "fire-emulator-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015567449822:android:9ff96786ae27fa742e8c4f",
+        "android_client_info": {
+          "package_name": "com.example.flutter_fire_emulator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015567449822-o2sr67f8hie81k43po9lblk7p0g3ld4i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMMD3hQgeT-LYOwPFKm5oLik-7XBEeNsc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1015567449822-o2sr67f8hie81k43po9lblk7p0g3ld4i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1015567449822-rsbh077b7lagaev58idsfai9ehl6t2p8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterFireEmulator"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

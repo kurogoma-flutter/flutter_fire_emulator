@@ -1,0 +1,30 @@
+services:
+  front:
+    image: node:lts-slim
+    working_dir: /app
+    tty: true
+
+  firebase:
+    build:
+      context: .
+      dockerfile: ./docker/firebase/Dockerfile
+    volumes:
+      - ./.firebaserc:/opt/firebase/.firebaserc
+      - ./firebase.json:/opt/firebase/firebase.json
+      - ./firestore.indexes.json:/opt/firebase/firestore.indexes.json
+      - ./firestore.rules:/opt/firebase/firestore.rules
+      - ./docker/firebase/bin/:/root/.cache:cached
+      - ./docker/firebase/config/:/root/.config:cached
+      - ./functions:/opt/firebase/functions
+      - ./extensions:/opt/firebase/extensions
+    ports:
+      - 9099:9099 # Firebase Authentication
+      - 5001:5001 # Clound Functions
+      - 8081:8081 # Cloud Firestore
+      - 9001:9001 # Realtime Database
+      - 5002:5002 # Firebase Hosting
+      - 8085:8085 # Cloud Pub/Sub
+      - 9199:9199 # Cloud Storage
+      - 4001:4001 # Emulator Suite UI
+    working_dir: /opt/firebase
+    command: firebase emulators:start
