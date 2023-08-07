@@ -1,9 +1,29 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+import 'firebase_instance.dart';
+
+class HomePage extends StatefulWidget {
   const HomePage({
     super.key,
   });
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    Future(() async {
+      final collection = firestore.collection('todos');
+      // todosの一覧取得をしてログ出力
+      final snapshot = await collection.get();
+      for (var doc in snapshot.docs) {
+        print(doc.data());
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
